@@ -22,10 +22,8 @@ function checksomething(){
 					assert.equal(err, null);
 					console.log("err = ", err);
 					if (doc != null) {
-						// console.log("Doc = ", doc);
 						$scope.getFirst.push(doc);
 					} else{
-						// console.log("Ohoo = ",$scope.getFirst);
 						if($scope.getFirst.length > 0){
 							deferred.resolve("That Ok");
 						} else {
@@ -41,13 +39,13 @@ function checksomething(){
 
 
 		Jestest()
-	    .then(function() {
-	      console.log("from promise = ", arguments);
-	      callbackOk($scope.getFirst);
-	    }).catch(function(e){
-	  	  console.log(e);
-	      callbackError(e);
-	  	});
+    .then(function() {
+      console.log("from promise = ", arguments);
+      callbackOk($scope.getFirst);
+    }).catch(function(e){
+  	  console.log(e);
+      callbackError(e);
+  	});
 	}
 
 }
@@ -59,4 +57,4 @@ john.getjes(function(Ok){
 	console.log("if Ok = ", Ok);
 }, function(error){
 	console.log("if error = ", error);
-}); 
+});
